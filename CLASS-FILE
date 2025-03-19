@@ -37,5 +37,27 @@ namespace loginclass
             }
         }
 
+
+        public static DataTable Crud(string qtype, string tblnm, string param = null)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter da;
+            if (qtype == "insert")
+            {
+                string sql = "INSERT INTO " + tblnm + " (studentname,mobileno) VALUES ('" + param + "')";
+                da = new SqlDataAdapter(sql, cn);
+                da.Fill(dt);
+                return dt;
+            }
+            if (qtype == "select")
+            {
+                string sql = "select * from " + tblnm;
+                da = new SqlDataAdapter(sql, cn);
+                da.Fill(dt);
+                return dt;
+            }
+            return dt;  
+        }
+
     }
 }
