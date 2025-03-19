@@ -28,8 +28,11 @@ namespace loginclass
             }
             else if (data == "2")
             {
-                MessageBox.Show("Banned", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                clear();
+                //MessageBox.Show("Banned", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //clear();
+                Form3 f3 = new Form3();
+                f3.Show();
+                this.Hide();
             }
             else if (data == "3")
             {
